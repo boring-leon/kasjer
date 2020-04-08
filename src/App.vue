@@ -11,7 +11,7 @@
     <template v-else>
       <WinView />
     </template>
-    <button @click="reload">Nowe losowanie</button>
+    <button @click="$emit('buildOrderRequest')">Nowe losowanie</button>
   </div>
 </template>
 
@@ -27,10 +27,6 @@ export default {
   components: { Order, MoneyGrid, ChangeRecord, Timer, WinView },
 
   methods: {
-    reload() {
-      location.reload();
-    },
-
     setPosition(selector, pos) {
       document.querySelector(selector).style.position = pos;
     },

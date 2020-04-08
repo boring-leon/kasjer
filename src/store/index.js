@@ -20,6 +20,10 @@ export default new Vuex.Store({
         
     },
     mutations: {
-        addChange: (state, n) => state.changeToReceive = Math.round((state.changeToReceive + n) * 100) / 100
+        addChange: (state, n) => state.changeToReceive = Math.round((state.changeToReceive + n) * 100) / 100,
+        clearState: state => {
+            state.changeTransactions = [];
+            state.changeToReceive = 0;
+        }
     }
 })

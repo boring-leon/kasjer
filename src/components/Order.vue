@@ -8,12 +8,24 @@
 export default {
   name: "Order",
   beforeMount() {
-    this.setPrice();
-    this.setGivenSum();
-    this.saveInitialChange();
+    this.$parent.$on("buildOrderRequest", () => {
+      this.clearOrder();
+      this.buildOrder();
+    });
+    
+    this.buildOrder();
   },
 
   methods: {
+    buildOrder() {
+      this.setPrice();
+      this.setGivenSum();
+      this.saveInitialChange();
+    },
+    clearOrder(){
+      this.$store.commit('clearState');
+    },
+
     setPrice() {
       const integer = this.getRandomNumber({ max: 499, min: 1 });
       const decimalPoint = this.getRandomNumber({ max: 100, min: 1 }) / 100;
@@ -24,10 +36,10 @@ export default {
       this.givenSum = this.getRandomNumber({ max: 500, min: this.price });
     },
 
-    saveInitialChange(){
-      const change = Math.round((this.givenSum - this.price )* 100) / 100;
+    saveInitialChange() {
+      const change = Math.round((this.givenSum - this.price) * 100) / 100;
       this.$parent.initalChange = change;
-      this.$store.commit('addChange', change);
+      this.$store.commit("addChange", change);
     },
 
     getRandomNumber({ max, min }) {
@@ -44,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-h1{
+h1 {
   display: inline-block;
   margin-bottom: 0;
   padding: 0;
