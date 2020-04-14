@@ -11,7 +11,7 @@
     <template v-else>
       <WinView />
     </template>
-    <button @click="$emit('buildOrderRequest')">Nowe losowanie</button>
+    <button @click="$emit('newGameStarted')">Nowe losowanie</button>
   </div>
 </template>
 

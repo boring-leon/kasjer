@@ -21,8 +21,8 @@ export default {
 </script>
 <style scoped>
 @media (max-width: 754px) {
-  img{
-    width: 150,75px;
+  img {
+    width: 150, 75px;
     height: 75.75px;
   }
 }

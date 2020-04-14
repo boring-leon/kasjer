@@ -8,11 +8,11 @@
 export default {
   name: "Order",
   beforeMount() {
-    this.$parent.$on("buildOrderRequest", () => {
+    this.$parent.$on("newGameStarted", () => {
       this.clearOrder();
       this.buildOrder();
     });
-    
+
     this.buildOrder();
   },
 
@@ -22,8 +22,8 @@ export default {
       this.setGivenSum();
       this.saveInitialChange();
     },
-    clearOrder(){
-      this.$store.commit('clearState');
+    clearOrder() {
+      this.$store.commit("clearState");
     },
 
     setPrice() {
