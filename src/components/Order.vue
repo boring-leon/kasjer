@@ -12,8 +12,6 @@ export default {
       this.clearOrder();
       this.buildOrder();
     });
-
-    this.buildOrder();
   },
 
   methods: {
@@ -38,7 +36,7 @@ export default {
 
     saveInitialChange() {
       const change = Math.round((this.givenSum - this.price) * 100) / 100;
-      this.$parent.initalChange = change;
+      this.$parent.initialChange = change;
       this.$store.commit("addChange", change);
     },
 

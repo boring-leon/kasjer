@@ -25,6 +25,10 @@ import WinView from "./views/Win";
 export default {
   name: "App",
   components: { Order, MoneyGrid, ChangeRecord, Timer, WinView },
+  
+  mounted() {
+    this.$emit("newGameStarted");
+  },
 
   methods: {
     setPosition(selector, pos) {

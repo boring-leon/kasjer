@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Udało ci się wydać resztę {{ $parent.initalChange }}zł w {{ $parent.time}}s</h1>
+    <h1>Udało ci się wydać resztę {{ $parent.initialChange }}zł w {{ $parent.time}}s</h1>
     <br />
     <h1>
       banknoty: {{ paperTransactions.length }}
