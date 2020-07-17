@@ -45,6 +45,7 @@ button {
     bottom: 2px;
     right: 43%;
     position: absolute;
+	outline: none;
 }
 
 hr {
